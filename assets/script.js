@@ -9,12 +9,10 @@ function cadastrar() {
   let dia_plantacao = window.document.getElementById('dia_plantacao');
   let dia_colheita = window.document.getElementById('dia_colheita');
 
-  let plantacao = [
-    nome.value, semente.value, dia_plantacao.value, dia_colheita.value
-  ];
+  let plantacao = [nome.value, semente.value, dia_plantacao.value, dia_colheita.value];
 
   let j = plantacao.length;
-  let logico = false
+  let logico = false;
   for (let i = 0; i <= j - 1; i++) {
 
     if (plantacao[i] === "") {
@@ -28,28 +26,57 @@ function cadastrar() {
     plantacoes.push(plantacao);
     localStorage.setItem("plantacoes", JSON.stringify(plantacoes)); // Salva no navegador
     alert("Plantação cadastrada com sucesso!");
+    window.location.href = "../index.html";
 
   } else {
     alert("Preencha todos os campos!")
   }
-
-
 
 };
 
 
 function visualizar() {
   let res = document.getElementById("resultado");
-  res.innerHTML = "";
+  res.innerHTML = "<p>Plantações Cadastradas:</p>";
 
   for (let p of plantacoes) {
     res.innerHTML +=
-      "Nome: " + p[0] +
-      " | Semente: " + p[1] +
-      " | Plantio: " + p[2] +
-      " | Colheita: " + p[3] +
-      "<br>";
+    `<input type="radio" id="${p[0]}">
+    <label for="${p[0]}">${p[0]}</label><br>`
   };
+
+  res.innerHTML +=     
+          `<button type="button" id="edicao" onclick="analisar()">Visualizar</button>`
+
+}
+
+
+function analisar() {
+  let res = document.getElementById("resultado");
+  let radioSelecionado = false;
+
+  for (let i = 0; i < plantacoes.length; i++) {
+    let p = plantacoes[i];
+    const radio = document.getElementById(p[0]);
+
+    if (radio && radio.checked) {
+      radioSelecionado = true;
+      res.innerHTML = ""
+
+      res.innerHTML +=
+        "Nome: " + p[0] +
+        " | Semente: " + p[1] +
+        " | Plantio: " + p[2] +
+        " | Colheita: " + p[3] +
+        "<br>";
+
+      break;
+    }
+  }
+  
+  if (!radioSelecionado) {
+    alert("Selecione uma das opções!");
+  }
 };
 
 

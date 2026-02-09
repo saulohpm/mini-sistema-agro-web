@@ -1,6 +1,6 @@
 # 🌱 Mini Sistema Agro (Web)
 
-Mini sistema web para cadastro, edição e visualização de plantações, desenvolvido com HTML, CSS e JavaScript puro.  
+Mini sistema web para cadastro, edição e visualização de plantações, desenvolvido com HTML, CSS e JavaScript.  
 Os dados são armazenados localmente no navegador utilizando localStorage.
 
 Projeto com fins educacionais, focado em lógica de programação e manipulação do DOM, sem uso de frameworks ou backend.
@@ -28,12 +28,21 @@ Projeto com fins educacionais, focado em lógica de programação e manipulaçã
 
 ## Arquivos do projeto
 
-- menu.html — página inicial do sistema  
-- cadastrar.html — cadastro de plantações  
-- editar.html — edição de plantações  
-- visualizar.html — visualização das plantações  
-- script.js — lógica do sistema  
-- tema.css — estilos do projeto  
+# 📁 Estrutura do Projeto
+
+```bash
+mini-sistema-agro-web/
+├── index.html
+├── README.md
+├── pages/
+│   ├── cadastrar.html
+│   ├── editar.html
+│   └── visualizar.html
+└── assets/
+    ├── script.js
+    ├── tema.css
+    └── logo.png
+```
 
 ---
 
@@ -61,10 +70,6 @@ O sistema funciona localmente e não requer servidor.
 
 Este projeto foi desenvolvido para fins de estudo, com foco em:
 
-- Lógica de programação
+- Lógica de programação em JavaScript
 - Manipulação do DOM
-- Estruturação básica de um sistema web
-
----
-
-## Projetos relacionados
+- Estruturação básica de um sistema web usando HTML e CSSs
