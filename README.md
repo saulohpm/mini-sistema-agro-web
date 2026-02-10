@@ -46,12 +46,15 @@ mini-sistema-agro-web/
 
 ## Como executar
 
-1. Clone o repositório:
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+1. Clone o repositório: \
+https://github.com/saulohpm/mini-sistema-agro-web.git
 
 2. Abra o arquivo menu.html em qualquer navegador moderno.
 
-O sistema funciona localmente e não requer servidor. Acesse também por: https://saulohpm.github.io/mini-sistema-agro-web/index.html
+O sistema funciona localmente e não requer servidor.
+
+Acesse também pela página: \
+https://saulohpm.github.io/mini-sistema-agro-web/index.html
 
 ---
 
@@ -70,4 +73,4 @@ Este projeto foi desenvolvido para fins de estudo, com foco em:
 
 - Lógica de programação em JavaScript
 - Manipulação do DOM
-- Estruturação básica de um sistema web usando HTML e CSSs
+- Estruturação básica de um sistema web usando HTML e CSS

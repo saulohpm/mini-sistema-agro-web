@@ -44,12 +44,11 @@ function visualizar() {
 
   for (let p of plantacoes) {
     res.innerHTML +=
-    `<input type="radio" id="${p[0]}">
+    `<input type="radio" id="${p[0]}" name="plantacoes">
     <label for="${p[0]}">${p[0]}</label><br>`
   };
 
-  res.innerHTML +=     
-          `<button type="button" id="edicao" onclick="analisar()">Visualizar</button>`
+  res.innerHTML += `<button type="button" id="edicao" onclick="analisar()">Visualizar</button>`
 
 }
 
@@ -70,11 +69,18 @@ function analisar() {
       let diaColheita = new Date(p[3].split("/").reverse().join("-"));
       let diffDias = (diaColheita - diaPlantacao) / (1000 * 60* 60 * 24);
 
+      if (diffDias >= 0) {
+        calculotexto = "<p>Faltam " + diffDias + " dias para a colheita!</p>"
+      } else {
+        calculotexto = "<p>Se passaram " + diffDias * -1 + " dias da colheita!</p>"
+      }
+
       res.innerHTML = "<h2>Plantação: " + p[0] + "</h2>" +
                       "<p>Semente: " + p[1] + "</p>" +
                       "<p>Data de Plantio: " + p[2] + "</p>" +
                       "<p>Data de Colheita: " + p[3] + "</p>" +
-                      "<p>Faltam " + diffDias + " dias para a colheita!</p><br>";
+                      calculotexto +
+                      "<br>";
 
       break;
     }
@@ -87,18 +93,18 @@ function analisar() {
 
 function editar() {
   let res = document.getElementById("resultado");
-  res.innerHTML = "";
+  res.innerHTML = "<p>Escola uma plantação para editar:</p>";
 
   for (let p of plantacoes) {
     res.innerHTML +=
-    `<input type="radio" id="${p[0]}">
+    `<input type="radio" id="${p[0]}", name="plantacoes">
     <label for="${p[0]}">${p[0]}</label><br>`
   };
 };
 
 
 function edicao() {
-
+  let res = document.getElementById("resultado");
   let res2 = document.getElementById("resultado2");
 
   let radioSelecionado = false;
@@ -109,9 +115,10 @@ function edicao() {
 
     if (radio && radio.checked) {
       radioSelecionado = true;
+      res.innerHTML = "";
       res2.innerHTML = "";
 
-      res2.innerHTML = `<p>Você selecionou ${p[0]}</p>` +
+      res2.innerHTML = `<h2>Editando ${p[0]}</h2>` +
         `<p>Nome novo da plantação: <input type="text" id="novo_nome" value="${p[0]}"></p>` +
         `<p>Semente Utilizada: <input type="text" id="nova_semente" value="${p[1]}"></p>` +
         `<p>Dia de plantação (dd/mm/aaaa): <input type="text" id="novo_dia_plantacao" value="${p[2]}"></p>` +
@@ -148,10 +155,19 @@ function confirmarEdicao(index) {
 
 
 function limpar() {
+  let resposta = confirm("Tem certeza que quer apagar os dados?");
 
-  localStorage.removeItem("plantacoes");
-  plantacoes = [];
-  document.getElementById("resultado").innerHTML = "";
-  alert("Dados apagados com sucesso!");
+  if (resposta) {
+    // Usuário clicou OK
+    localStorage.removeItem("plantacoes");
+    plantacoes = [];
+    document.getElementById("resultado").innerHTML = "";
+    alert("Dados apagados com sucesso!");
+  } else {
+    // Usuário clicou Cancelar
+    alert("Ação cancelada.");
+  }
+
+
 
 };
