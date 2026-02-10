@@ -1,4 +1,7 @@
-body {
+/* ==========================
+   ESTILOS GERAIS
+========================== */
+body { 
     background-color: rgb(45, 65, 55);
     margin-left: auto;
     margin-right: auto;
@@ -6,29 +9,37 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ==========================
+   TÍTULOS
+========================== */
 h1 {
     color: rgb(240, 250, 255);
-    padding: 14px;
-    height: auto;
-    width: auto;
     text-align: center;
+    padding: 14px;
     background-color: rgb(60, 80, 70);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    width: auto;
+    height: auto;
 }
 
+/* ==========================
+   PARÁGRAFOS
+========================== */
 p {
     color: rgb(230, 235, 235);
-    height: auto;
-    width: auto;
     text-align: center;
+    width: auto;
+    height: auto;
 }
 
+/* ==========================
+   BOTÕES
+========================== */
 button {
     display: flex;
-    margin: auto;
+    margin: 14px auto 0 auto;
     padding: 10px 18px;
-    margin-top: 14px;
     border-radius: 10px;
     border: none;
     background-color: rgb(90, 130, 105);
@@ -42,14 +53,15 @@ button {
 button:hover {
     background-color: rgb(104, 150, 125);
     transform: translateY(-2px);
-    transition: 0.3s;
 }
 
+/* ==========================
+   CAMPOS DE INPUT
+========================== */
 input {
     display: inline-block;
     padding: 8px;
-    margin: auto;
-    margin-top: 12px;
+    margin: 12px auto 0 auto;
     border-radius: 8px;
     border: none;
     outline: none;
@@ -65,6 +77,9 @@ input[type="radio"] {
     display: inline-block;
 }
 
+/* ==========================
+   LINKS
+========================== */
 a {
     display: inline-block;
     margin: auto;
@@ -72,28 +87,29 @@ a {
     text-decoration: none;
     justify-content: center;
     color: rgb(180, 220, 200);
+    transition: 0.3s;
 }
 
 a:hover {
     color: white;
 }
 
-#resultado {
+/* ==========================
+   RESULTADOS
+========================== */
+#resultado, #resultado2 {
     color: rgb(220, 240, 230);
-    height: auto;
-    width: auto;
     text-align: center;
-    margin-top: 10px;
+    width: auto;
+    height: auto;
 }
 
-#resultado2 {
-    color: rgb(220, 240, 230);
-    height: auto;
-    width: auto;
-    text-align: center;
-    margin-top: 6px;
-}
+#resultado { margin-top: 10px; }
+#resultado2 { margin-top: 6px; }
 
+/* ==========================
+   RODAPÉ
+========================== */
 footer {
     position: fixed;
     bottom: 0;
@@ -104,6 +120,9 @@ footer {
     padding: 6px;
 }
 
+/* ==========================
+   CONTAINER
+========================== */
 .container {
     text-align: center;
 }
@@ -113,19 +132,15 @@ footer {
     margin-top: 12px;
 }
 
+/* ==========================
+   RESPONSIVO (MOBILE)
+========================== */
 @media (max-width: 600px) {
 
-    body {
-        font-size: 1em;
-    }
+    body { font-size: 1em; }
 
-    h1 {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 0.999em;
-    }
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 0.999em; }
 
     button {
         display: block;
@@ -151,7 +166,6 @@ footer {
         display: inline-block;
         margin: 0 6px 0 0;
     }
-
 
     a {
         display: block;

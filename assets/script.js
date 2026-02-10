@@ -170,7 +170,47 @@ function confirmarEdicao(index) {
 
   alert("Plantação editada com sucesso!");
   document.getElementById("resultado2").innerHTML = "";
-  window.location.href = "../index.html"
+  window.location.href = "../index.html";
+}
+
+
+function resumomensal() {
+  let res = document.getElementById("resultado");
+
+  const meses = [
+  "Janeiro", "Fevereiro", "Março", "Abril",
+  "Maio", "Junho", "Julho", "Agosto",
+  "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+
+  const mesAtual = meses[new Date().getMonth()];
+
+  res.innerHTML = `<hr><h2>Resumo de Colheita Mensal</h2><hr>
+                    <p>Total de Plantações Cadastradas: ${plantacoes.length}</p>
+                    <p>Colheitas para o mês de ${mesAtual}: </p>`;
+
+  let temcolheita = 0;
+
+  for (let p of plantacoes) {
+    let dia_colheita = new Date(p[3].split("/").reverse().join("-"));
+    let mes_colheita = meses[dia_colheita.getMonth()];
+    
+    if (mes_colheita === mesAtual){
+      res.innerHTML += `<br><p>- ${p[0]}</p>
+                        <p>Semente: ${p[1]}</p>
+                        <p>Colheita: ${p[3]}</p>`;
+      temcolheita += 1;
+    }
+  }
+
+  if (temcolheita === 0) {
+    res.innerHTML += `<h4>NÃO HÁ COLHEITAS PARA ESTE MÊS!</h4>`;
+  }
+}
+
+
+function statuscolheita() {
+  let res = document.getElementById("resultado");
 }
 
 
