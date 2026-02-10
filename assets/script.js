@@ -13,6 +13,8 @@ function cadastrar() {
 
   let j = plantacao.length;
   let logico = false;
+  let formatoData = /^\d{2}\/\d{2}\/\d{4}$/;
+
   for (let i = 0; i <= j - 1; i++) {
 
     if (plantacao[i] === "") {
@@ -21,18 +23,19 @@ function cadastrar() {
 
   };
 
-  if (logico === false){
+  if (logico !== false) {
+    alert("Preencha todos os campos!");
 
-    plantacoes.push(plantacao);
-    localStorage.setItem("plantacoes", JSON.stringify(plantacoes)); // Salva no navegador
-    alert("Plantação cadastrada com sucesso!");
-    window.location.href = "../index.html";
+  } else if (!formatoData.test(dia_plantacao.value) || !formatoData.test(dia_colheita.value)) {
+    alert("Data inválida! Use o formato dd/mm/aaaa");
 
   } else {
-    alert("Preencha todos os campos!")
+      plantacoes.push(plantacao);
+      localStorage.setItem("plantacoes", JSON.stringify(plantacoes)); // Salva no navegador
+      alert("Plantação cadastrada com sucesso!");
+      window.location.href = "../index.html";
   }
-
-};
+}
 
 
 function visualizar() {
@@ -61,19 +64,21 @@ function analisar() {
 
     if (radio && radio.checked) {
       radioSelecionado = true;
-      res.innerHTML = ""
 
-      res.innerHTML +=
-        "Nome: " + p[0] +
-        " | Semente: " + p[1] +
-        " | Plantio: " + p[2] +
-        " | Colheita: " + p[3] +
-        "<br>";
+      // Calcula diferença de dias com base na plantação selecionada
+      let diaPlantacao = new Date(p[2].split("/").reverse().join("-"));
+      let diaColheita = new Date(p[3].split("/").reverse().join("-"));
+      let diffDias = (diaColheita - diaPlantacao) / (1000 * 60* 60 * 24);
+
+      res.innerHTML = "<h2>Plantação: " + p[0] + "</h2>" +
+                      "<p>Semente: " + p[1] + "</p>" +
+                      "<p>Data de Plantio: " + p[2] + "</p>" +
+                      "<p>Data de Colheita: " + p[3] + "</p>" +
+                      "<p>Faltam " + diffDias + " dias para a colheita!</p><br>";
 
       break;
     }
   }
-  
   if (!radioSelecionado) {
     alert("Selecione uma das opções!");
   }

@@ -51,7 +51,7 @@ mini-sistema-agro-web/
 
 2. Abra o arquivo menu.html em qualquer navegador moderno.
 
-O sistema funciona localmente e não requer servidor.
+O sistema funciona localmente e não requer servidor. Acesse também por: https://saulohpm.github.io/mini-sistema-agro-web/index.html
 
 ---
 

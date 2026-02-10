@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌱 Mini Sistema Agro 🌱</title>
+    <title>Mini Sistema Agro</title>
     <link rel="stylesheet" href="assets/tema.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
@@ -13,22 +13,26 @@
 
     <P>Selecione a opção desejada:</P>
 
-    <a href="pages/cadastrar.html" target="_self">
-        <button>Cadastrar Plantação</button>
-    </a>
+    <div class="container">
+        <a href="pages/cadastrar.html" target="_self">
+            <button>Cadastrar Plantação</button>
+        </a> <br>
 
-    <a href="pages/editar.html">
-        <button>Editar Plantação</button>
-    </a>    
+        <a href="pages/editar.html">
+            <button>Editar Plantação</button>
+        </a> <br>
 
-    <a href="pages/visualizar.html">
-        <button>Visualizar Plantações Cadastradas</button>
-    </a>
+        <a href="pages/visualizar.html">
+            <button>Visualizar Plantações Cadastradas</button>
+        </a> <br>
+    </div>
 
-    <button onclick="limpar()">Limpar dados</button>
+
+
+    <button type="button" onclick="limpar()">Limpar dados</button>
 
     <footer>
-        <p>© Saulo Henrique - Todos os Direitos Reservados</p>
+        <p>© shpm</p>
     </footer>
 
     <script src="assets/script.js"></script>
