@@ -32,15 +32,22 @@ Projeto com fins educacionais, focado na prática de JavaScript. Isto é, lógic
 mini-sistema-agro-web/
 ├── index.html
 ├── README.md
+│
 ├── pages/
 │   ├── cadastrar.html
 │   ├── editar.html
 │   ├── visualizar.html
 │   ├── relatorios.html
 │   └── apagar.html
+│
+├── js/
+│   ├── main.js
+│   └── utils.js
+│
+├── css/
+│   └── style.css
+│
 └── assets/
-    ├── script.js
-    ├── tema.css
     └── logo.png
 ```
 
