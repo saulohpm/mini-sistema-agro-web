@@ -29,7 +29,7 @@ Projeto com fins educacionais, focado na prática de JavaScript. Isto é, lógic
 ##  Estrutura do Projeto
 
 ```bash
-mini-sistema-agro-web/
+mini-sistema-plantacoes-web/
 ├── index.html
 ├── README.md
 │
@@ -48,7 +48,7 @@ mini-sistema-agro-web/
 │   └── style.css
 │
 └── assets/
-    └── logo.png
+    └── favicon.png
 ```
 
 ---

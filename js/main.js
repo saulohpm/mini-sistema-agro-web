@@ -9,7 +9,6 @@ const meses = [
   "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
 
-
 // ============================
 // Funções de Cadastro
 // ============================

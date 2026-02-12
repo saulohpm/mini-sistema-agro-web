@@ -14,6 +14,7 @@ function validarFormatoData(dataStr) {
 }
 
 function validarOrdemDatas(dataInicio, dataFim) {
+  // Valida as datas, caso a afirmação abaixo seja verdadeira ou falsa, retorna valor booleano
   return dataInicio < dataFim;
 }
 
@@ -38,14 +39,20 @@ function carregarDados(chave) {
 function obterIndexSelecionado(nomeRadio) {
   const radios = document.getElementsByName(nomeRadio);
 
+  // Percorre todos os radios com o mesmo name.
+  // Quando encontra o que está marcado (checked),
+  // retorna o value convertido para número.
+  // Esse value representa o índice da plantação no array.
   for (let radio of radios) {
     if (radio.checked) {
       return parseInt(radio.value);
     }
   }
 
+  // Se nenhum radio estiver selecionado, retorna -1
   return -1;
 }
+
 
 
 // ============================
